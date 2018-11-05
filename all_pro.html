@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Detail</title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Acme|Pacifico|Kosugi|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 1,
+      max: 1000,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+  </script>
+
+
+  
+</head>
+<style>
+	.checked {
+    color: orange;
+
+}
+.dot {
+    height: 1.4vw;
+    width: 1.4vw;
+ 
+    border-radius: 50%;
+    display: inline-block;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.checkit {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.top-left {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+@media only screen and (max-width: 800px) {
+  div.sahil
+  {
+    display: none;
+  }
+  div.sahil1
+  {
+    display: none;
+  }
+  div.sahil2
+  {
+    display: none;
+  }
+  div.sahil3
+  {
+    display: none;
+  }
+  div.image
+  {
+    width: 12vw;
+    float: left; 
+    padding-left: 1vw;
+  }
+  div.image
+  {
+    width: 10vw;
+  }
+  div.image
+  {
+    width: 10vw;
+  }
+  div.image
+  {
+    width: 10vw;
+  }
+  div.image
+  {
+    width: 10vw;
+  }
+ 
+  span.dot
+  {
+    width: 4vw;
+    height: 4vw;
+    margin-left: 0.5vw;
+       float: left;
+  }
+  
+  h6.get
+  {
+    font-size: 4vw;
+  }
+} 
+</style>
+<body>
+
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+     <ul class="nav navbar-nav">
+    <li><p class="navbar-text" style="color: white;"> <span class="glyphicon glyphicon-envelope" style="color: white;"></span>   support@info.com</p></li>
+    <li> <p class="navbar-text" style="color: white;"><span class="glyphicon glyphicon-earphone" style="color: white;"></span> +123 456 7890</p></li>
+  </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">USD <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">USD</a></li>
+          <li><a href="#">INR</a></li>
+        </ul>
+      </li>
+     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">ENGLISH <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">ENGLISH</a></li>
+          <li><a href="#">HINDI</a></li>
+           <li><a href="#">FRENCH</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+ <div class="navbar" >
+ 	<div class="container">
+    <div class="navbar-header navbar-inverse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+  </div>
+ 		<ul class="nav navbar-nav">
+ 		<li class="navbar-text"><h4 style="margin-top: -1vw;font-family: 'Lato';margin-left: 5vw;">SHOPPER</h4></li>
+ 	</ul>
+ 	<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="What are you looking for..." name="search" style="margin-top: -1.9vw;margin-right: 2vw;">
+      </div>
+      <div class="form-group">
+      <select class="form-control" id="sel1" style="margin-top: -1.9vw;">
+        <option>All Categories</option>
+        <option>Clothes</option>
+        <option>MOBILES</option>
+        <option>GROCERY</option>
+      </select>
+  </div>
+      <button  type="submit" class="btn btn-default" style="margin-top: -1.9vw;background-color: red;"> <span class="glyphicon glyphicon-search"></span></button>
+    </form>
+     <div class="collapse navbar-collapse" id="myNavbar1" style="color: black;">
+    <ul class="nav navbar-nav navbar-right">
+    	<li><a href= "" style="margin-top: -3.2vw;color: black;margin-right: -1.2vw;"><h2> <span class="glyphicon glyphicon-shopping-cart"></span></h2></a></li> 
+    	  <li><a href =" " style="margin-top: -3.2vw;color: black;margin-right: -1.2vw;"><h2><span class="glyphicon glyphicon-heart"></span><h2></a></li>
+    	 <li><a href="" style="margin-top: -3.2vw;color: black;margin-right: -1.2vw;"><h2>Login</h2></a></li>
+    	  <li><a href="" style="margin-top: -3.2vw;color: black;font-size: 1.5vw;"><h2>Join</h2></a></li>
+   </ul>
+</div>
+</div>
+ 	</div>
+<div class="container-fluid">
+<hr style="margin-top: -4vw;" ></div>
+   <div class="navbar" style="margin-top: -3.5vw;">
+     <div class="container">
+     	<ul class="nav navbar-nav">
+     		 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="background-color: red;color: white;"><span class="glyphicon glyphicon-th-list">  </span>  ALL DEPARTMENTS <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" style="width: 14vw;">CLOTHES</a></li>
+          <li><a href="#">MOBILES</a></li>
+          <li><a href="#">LAPTOPS</a></li>
+        </ul>
+      </li>
+     	</ul>
+     	 <ul class="nav navbar-nav navbar-right">
+    	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;"> HOME <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">CLOTHES</a></li>
+          <li><a href="#">MOBILES</a></li>
+          <li><a href="#">LAPTOPS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;"> SHOP<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">CLOTHES</a></li>
+          <li><a href="#">MOBILES</a></li>
+          <li><a href="#">LAPTOPS</a></li>
+        </ul>
+      </li>
+      <li><a href="" style="color: black;">LOOKBOOK<b><sup style="background-color: yellow;border-radius: 25px;padding: 0.3vw;color: white;">Sale</sup></b></a></li>
+       <li><a href="" style="color: black;">SALE<b><sup style="background-color: red;border-radius: 10px;padding: 0.3vw;color: white;">Hot</sup></b></a></li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black;"> PAGES<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">CLOTHES</a></li>
+          <li><a href="#">MOBILES</a></li>
+          <li><a href="#">LAPTOPS</a></li>
+        </ul>
+      </li>
+      <li><a href="" style="color: black;">CONTACTS</a></li>
+   </ul>
+     </div>
+   </div>
+   <div class="container-fluid">
+    <div class="checkit">
+   <a href="" class="hey">  <img src="42.jpg" class="img-responsive" ></a> 
+            <div class="centered"><h2 style="font-size: 6vw;">SHOP</h2></div>
+
+            <div class="centered" style="top: 66%;margin-top: 2vw;"><h4>Home/Shop</h></div> 
+ </div>
+   </div>
+   <div class="container" style="margin-top: 2vw;">
+      <div class="row">
+        <div class="col-sm-3" >
+          <h2>SHOP BY</h2>
+          <hr><hr style="margin-top: -2vw;">
+          <h4><b>Categories</b></h4>
+               <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4> Men's<small>(16)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>Women's<small>(12)</small></h4>
+</div>
+                 </div>
+               </div>
+               <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4> Kid's<small>(14)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>Hardware<small>(6)</small></h4>
+</div>
+                 </div>
+               </div>
+                <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4> Essentials<small>(10)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>Clothing<small>(8)</small></h4>
+</div>
+                 </div>
+               </div>
+               <h4><b>Our Brands:</b></h4>
+                <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4> Barry Bags<small>(4)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>A.Cooper<small>(12)</small></h4>
+</div>
+                 </div>
+               </div>
+                <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4>Air Jet<small>(8)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>J.Chack<small>(10)</small></h4>
+</div>
+                 </div>
+               </div>
+                <div class="row" style="margin-left: 1vw;">
+
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+         <input type="checkbox" value=""> <h4> Arrs Shop<small>(6)</small></h4>
+                  </div> 
+                 </div>
+                 <div class="col-sm-6">
+                  <div class="checkbox">
+ <input type="checkbox" value=""><h4>Flash<small>(14)</small></h4>
+</div>
+                 </div>
+               </div>
+                <h4 style="margin-left: 1vw;"><b>Availability:</b></h4>
+                <div class="row" style="margin-left: 1vw;">
+                  <div class="col-sm-12">
+                 <div class="checkbox">
+ <input type="checkbox" value=""><h4>In stock<small>(34)</small></h4></div></div>
+</div><br>
+   <h4><b>Filter by Price:</b></h4>
+   <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+       <div id="slider-range"></div>
+       <h4><b>Filter by Color</b></h4>
+            <a href = " " ><span class="dot" style = "background-color:black;"></span></a>
+             <a href = " " ><span class="dot" style = "background-color:black;"></span></a>
+        
+       
+         <a href = " " ><span class="dot" style = "background-color:grey;"></span></a> 
+       
+       
+             <a href = " " ><span class="dot" style = "background-color:green;"></span></a> 
+       
+        
+           <a href = " " ><span class="dot" style = "background-color:blue;"></span></a> 
+      
+       
+             <a href = " " ><span class="dot" style = "background-color:red;"></span></a>
+      
+                <a href = " " ><span class="dot" style = "background-color:orange;"></span></a> 
+        
+               <a href = " " ><span class="dot" style = "background-color:yellow;"></span></a> 
+<br><br>
+       <div class="row">
+         <div class="col-sm-6">
+           <h6 style="margin-top: 2vw;" ><b>FEATURED ITEMS</b></h6>  
+         </div>
+         <div class="col-sm-6">
+          <div>
+            
+                <span class="dot" style = "background-color:grey;" onclick="pictureChange()"></span>
+            
+                <span class="dot" style = "background-color:grey;" onclick="pictureChange1()"></span> 
+            
+                <span class="dot" style = "background-color:grey;" onclick="pictureChange2()"></span>
+             
+                 <span class="dot" style = "background-color:grey;" onclick="pictureChange3()"></span>   
+               </div>
+                            
+           </div>
+      <script>
+        function pictureChange()
+{
+document.getElementById("first").src=("55.jpg");
+}
+   function pictureChange1()
+{
+document.getElementById("first").src=("56.jpg");
+}
+   function pictureChange2()
+{
+document.getElementById("first").src=("55.jpg");
+}
+   function pictureChange3()
+{
+document.getElementById("first").src=("56.jpg");
+}
+      </script>
+       </div> 
+          <hr><hr style="margin-top: -2vw;"> <hr style="margin-top: -2vw;"> 
+         <div class="checkit">
+            <img src="55.jpg" class="img-responsive" id="first" style="opacity: 0.2;">
+           <div class="top-left" style="left: 32%;"> <a href=""><span class="glyphicon glyphicon-search " style="color: black;"></span> </a></div>
+        
+         <div class="top-left" style="left:48%"><a href=""><span class="glyphicon glyphicon-retweet" style="color: black;"></span> </a></div>
+           <div class="top-left" style="left: 40%"><a href=""> <span class="glyphicon glyphicon-star" style="color: black;"></span> </a></div>
+           <div class="top-left" style="left: 56%"><a href=""><span class="glyphicon glyphicon-share" style="color: black;"></span> </a></div>
+            <div class="centered"><button type="button" class="btn btn-danger">ADD TO CART</button></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>$64.00 <small>$128.00</small></b></h4>
+            </div>
+            <div class="col-sm-6" style="margin-top: 0.8vw;">
+                <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+            </div>
+          </div>
+          <h4 style="color: red;"><u>AIRBRAKE GOGGLES</u></h4>
+          <img src="56.jpg" class="img-responsive">
+           <div class="row">
+            <div class="col-sm-6">
+              <h4><b>$64.00 <small>$128.00</small></b></h4>
+            </div>
+            <div class="col-sm-6" style="margin-top: 0.8vw;">
+                <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+            </div>
+          </div>
+          <h5><b>SKULL COMP 2.0 HELMET</b></h5><br>
+          <h3><b>TAG CLOUD</b></h3><hr><hr style="margin-top: -2vw;">
+          <div class="row">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-default btn-block btn-lg">SKIS  </button>
+             
+            </div>
+            <div class="col-sm-6" >
+            <button type="button" class="btn btn-default btn-block btn-lg">SHOES</button>
+            
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-default btn-block btn-lg">WATCHES</button>
+             
+            </div>
+            <div class="col-sm-6" >
+            <button type="button" class="btn btn-default btn-block btn-lg">BAGS</button>
+            
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-default btn-block btn-lg">KID'S</button>
+             
+            </div>
+            <div class="col-sm-6" >
+            <button type="button" class="btn btn-default btn-block btn-lg">ACCESS</button>
+            
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-default btn-block btn-lg">FASHION</button>
+             
+            </div>
+            <div class="col-sm-6" >
+            <button type="button" class="btn btn-default btn-block btn-lg">MEN</button>
+            
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-default btn-block btn-lg">WOMEN</button>
+             
+            </div>
+            <div class="col-sm-6" >
+            <button type="button" class="btn btn-default btn-block btn-lg">GIFTS</button>
+            
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="container " style="margin-top: 2vw;">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="dropdown">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+   Default sorting
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="" style="color: black;">Link 1</a><br>
+    <a class="dropdown-item" href="" style="color: black;">Link 2</a><br>
+    <a class="dropdown-item" href="" style="color: black;">Link 3</a><br>
+  </div>
+</div>
+     </div>      
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-sm-1">
+                    <a href="" style="color: black;">  <span class="glyphicon glyphicon-th"></span></a>
+                </div>
+                <div class="col-sm-1">
+                    <a href="" style="color: black;">  <span class="glyphicon glyphicon-th-list"></span> </a>
+                </div>
+                <div class="col-sm-10" style="margin-top: -1.0vw;">
+                  <span><h4><small>SHOWING 1-15 OF 160 RESULTS</small></h4></span>
+                </div>
+              </div>
+            </div>  
+        </div><br><br><br>
+        <div class="row" style="margin-top: 1vw;">
+          <div class="container">
+          <div class="col-sm-3">
+          <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="43.jpg" class="img-responsive" >
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+          </div>
+           <div class="col-sm-3">
+            <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="44.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+          </div>
+           <div class="col-sm-3">
+            <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="45.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+          </div>
+        </div>
+        </div>
+         <br><br><br>
+        <div class="row">
+          <div class="container">
+            <div class="col-sm-3">
+              <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="46.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+             <div class="col-sm-3">
+              <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="47.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+             <div class="col-sm-3">
+              <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="48.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="container">
+            <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="49.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+             <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="50.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+             <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="51.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="container">
+            <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="52.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="53.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="card text-center" style="background-color: rgb(211,211,211);">
+  <img src="54.jpg" class="img-responsive">
+    <h4 class="text-center">Aptent tactitches</h4>
+    <span class="fa fa-star checked"></span>
+<span  class="fa fa-star checked text-center"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<h4> <b>$180</b></h4>
+<button type="button" class="btn btn-danger ">ADD TO CART</button>
+    </div>
+            </div>
+          </div>
+        </div><br><br>
+        <ul class="pagination" style="margin-left: 2vw;">
+  <li class="active"><a href="#" >1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+   </div>
+    <div class="container-fluid" style="background-color: rgb(31, 25, 91);">
+        <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h1 style="color: white;">SHOPPERS</h1>
+            <br>
+            <h4 style="color: rgb(224, 247, 243);">It is a long established af factfact</h4>
+            <h4 style="color: rgb(224, 247, 243);">fact that a reader will be here.</h4>
+            <h4 style="color: rgb(224, 247, 243);">contact here</h4>
+            <div class="row">
+              <div class="col-sm-2">
+                <a  href="" class="fa fa-facebook-f"  style="color: white;"></a>
+              </div>
+              <div class="col-sm-2">
+                <a href="" class="fa fa-twitter" style="color: white;"></a>
+              </div>
+              <div class="col-sm-2">
+                  <a href="" class="fa fa-linkedin" style="color: white;"></a>
+              </div>
+              <div class="col-sm-2">
+                  <a href="" class="fa fa-instagram" style="color: white;"></a>
+              </div>
+              <div class="col-sm-2">
+                  <a href="" class="fa fa-google-plus" style="color: white;"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3" style="margin-top: 0.8vw;">
+            <h3 style="color: white;">HELP 7 SUPPORT</h3>
+            <br>
+            <h4><a href="" style="color: rgb(224, 247, 243);">How to Buy</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">User Protection</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">Returns & Exchanges</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">Shipping & Delivery</a><h4>
+          </div>
+          <div class="col-sm-3" style="margin-top: 0.8vw;">
+            <h3 style="color: white;">CATEGORIES</h3><br>
+            
+            <h4><a href="" style="color: rgb(224, 247, 243)">Accessories</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">Balcony Tables</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">bar unites</a><br><h4>
+            <h4><a href="" style="color: rgb(224, 247, 243);">Bed</a><h4>
+          </div>
+          <div class="col-sm-3" style="margin-top: 0.8vw;">
+            <h3 style="color: white;">CONTACT US</h3><br>
+            <h4  style="color:rgb(224, 247, 243);"> <span class="glyphicon glyphicon-map-marker"></span>  123,a long established</h4>
+            <h4 style="color: rgb(224, 247, 243);margin-left: 1vw;"> factfact fact that thememzm a</h4>
+            <h4 style="color: rgb(224, 247, 243);margin-left: 1vw;"> reader.</h4>
+            <h4 style="color: rgb(224, 247, 243);"><span class="glyphicon glyphicon-earphone"></span> +123 456 7890</h4>
+            <h4 style="color: rgb(224, 247, 243);"><span class="glyphicon glyphicon-envelope"></span> support@info.com</h4>
+
+          </div>
+        </div>
+        <hr style="color: rgb(224, 247, 243);">
+        <div class="row">
+          <div class="col-sm-8">
+          <h4 style="color: white; color: rgb(224, 247, 243);">Copyright   <span class="glyphicon glyphicon-copyright-mark"></span> 2017 <span style="color: rgb(249, 145, 95);">DevsTheme</span>.All right reserved.</h4>
+          </div>
+          <div class="col-sm-4">
+           <div class="row">
+              <div class="col-sm-2">
+            <div class="image"><a href="">  <img src="37.jpg" class="img-responsive img-thumbnail"></a></div>
+              </div>
+              <div class="col-sm-2">
+            <div class="image">  <a href=""> <img src="38.jpg" class="img-responsive img-thumbnail"></a></div>
+              </div>
+              <div class="col-sm-2">
+            <div class="image">  <a href=""> <img src="39.jpg" class="img-responsive img-thumbnail"></a></div>
+              </div>
+              <div class="col-sm-2">
+            <div class="image">  <a href=""> <img src="40.jpg" class="img-responsive img-thumbnail"></a></div>
+              </div>
+              <div class="col-sm-2">
+            <div class="image">  <a href=""> <img src="41.jpg" class="img-responsive img-thumbnail"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+ </body>
+ </html>
